@@ -414,13 +414,6 @@ curl -X POST "https://localhost:8080/api/routes" \
   }'
 ```
 
-### 3. 负载均衡配置
-
-支持多种负载均衡策略：
-- **轮询 (Round Robin)**: 默认策略
-- **加权轮询 (Weighted Round Robin)**: 根据权重分配
-- **最少连接 (Least Connections)**: 选择连接数最少的服务器
-
 ## 🔍 监控和日志
 
 ### 日志文件位置
@@ -511,7 +504,7 @@ go run main.go
 
 ## 📄 许可证
 
-本项目采用 MIT 许可证。详情请参阅 [LICENSE](LICENSE) 文件。
+本项目采用 Apache-2.0 license 许可证。
 
 ## 🙏 致谢
 
@@ -524,7 +517,7 @@ go run main.go
 
 如果您遇到问题或有建议，请：
 
-1. 查看 [Issues](https://github.com/your-username/tunnel-flow/issues)
+1. 查看 [Issues](https://github.com/mofywong/tunnel-flow/issues)
 2. 创建新的 Issue
 3. 联系维护者
 
