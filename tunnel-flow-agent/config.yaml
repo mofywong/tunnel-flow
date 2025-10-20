@@ -1,0 +1,15 @@
+# tunnel-flow-agent 配置文件
+# 请根据实际情况修改以下配置
+
+# WebSocket服务器地址（强制使用WSS加密通信）
+server:
+  url: "wss://localhost:8081/ws"
+
+# 客户端配置
+client:
+  id: "client_1760926816671672700"                                           # 客户端ID（必填）
+  auth_token: "32cfe8ee7d3a8cc51c297029a93a74460e04c755b9f54358a7ab05042a8ba17f"  # 认证Token（必填）
+
+# SSL/TLS 配置
+ssl:
+  insecure_skip_verify: true  # 跳过证书验证（开发环境使用自签名证书时设为true）

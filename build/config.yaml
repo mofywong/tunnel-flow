@@ -1,0 +1,59 @@
+# tunnel-flow 服务器配置文件
+
+# 服务器配置 - 多端口支持
+server:
+  host: "0.0.0.0"
+  api_port: 8080        # API接口端口
+  websocket_port: 8081  # WebSocket端口
+  proxy_port: 8082      # HTTP代理端口
+  
+# 数据库配置
+database:
+  path: "./data/tunnel-flow.db"
+
+# WebSocket配置
+websocket:
+  send_queue_size: 1000
+  # SSL/TLS配置 - 强制使用WSS加密通信
+  ssl:
+    enabled: true                    # 强制启用SSL/TLS
+    cert_file: "./ssl/server.crt"    # SSL证书文件路径
+    key_file: "./ssl/server.key"     # SSL私钥文件路径
+    force_ssl: true                  # 强制使用SSL，不提供降级选项
+
+# 认证配置
+auth:
+  jwt_secret: "your-secret-key"
+
+# 超时配置
+timeout:
+  reconnect_interval_ms: 5000
+  ping_interval_ms: 10000
+  request_timeout_ms: 30000
+
+# 重试配置
+retry:
+  max_retries: 3
+  initial_delay_ms: 100
+  max_delay_ms: 5000
+  multiplier: 2.0
+  max_attempts: 5
+
+# 性能优化配置
+performance:
+  worker_pool_size: 10
+  worker_queue_size: 1000
+  message_queue_size: 10000
+  batch_size: 100
+  batch_timeout_ms: 1000
+
+# 连接池配置
+connection_pool:
+  max_idle_conns: 10
+  max_open_conns: 100
+  conn_max_lifetime_seconds: 3600
+
+# 缓存配置
+cache:
+  size: 1000
+  ttl_seconds: 300
